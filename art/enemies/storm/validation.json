@@ -1,0 +1,46 @@
+{
+  "stormwisp": {
+    "triangles": 3990,
+    "embedded_images": 3,
+    "bytes": 26951856
+  },
+  "boss3": {
+    "triangles": 7988,
+    "embedded_images": 3,
+    "bytes": 32338160,
+    "bones": 15,
+    "clips": {
+      "Hover": {
+        "duration": 1.999999965230624,
+        "motion": 0.03185207206382448,
+        "start_end_error": 0.0
+      },
+      "StormCast": {
+        "duration": 0.9999999652306238,
+        "motion": 0.14860193215542628,
+        "start_end_error": 0.7035631046762755
+      },
+      "VortexCast": {
+        "duration": 1.999999965230624,
+        "motion": 0.5224848862087975,
+        "start_end_error": 0.0
+      },
+      "StormChannel": {
+        "duration": 0.9999999652306238,
+        "motion": 0.039819198243588975,
+        "start_end_error": 0.0
+      },
+      "Melee": {
+        "duration": 1.2000000129143398,
+        "motion": 0.40262224341145836,
+        "start_end_error": 0.0
+      },
+      "Fly": {
+        "duration": 1.6000000288089116,
+        "motion": 0.031870732726311045,
+        "start_end_error": 0.0
+      }
+    },
+    "cast_channel_error": 0.0
+  }
+}

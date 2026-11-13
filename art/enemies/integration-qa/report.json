@@ -1,0 +1,16 @@
+{
+  "guardians": 10,
+  "imps": 12,
+  "clips": [
+    "Attack",
+    "Idle",
+    "Walk"
+  ],
+  "strike": 23,
+  "impactPose": 0.64,
+  "bossDamage": 26,
+  "independentSkeletons": true,
+  "deathAndReset": true,
+  "errors": [],
+  "failed": []
+}

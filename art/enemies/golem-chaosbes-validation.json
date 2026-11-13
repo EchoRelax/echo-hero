@@ -1,0 +1,44 @@
+{
+  "golem": {
+    "triangles": 5990,
+    "bytes": 25311628,
+    "clips": [
+      "Attack",
+      "Idle",
+      "Walk"
+    ],
+    "embedded_images": 3,
+    "animation_checks": {
+      "Attack": {
+        "frame_range": [
+          0.8000000715255737,
+          36.79999923706055
+        ],
+        "loop_error": 0.0,
+        "motion": 0.77298532807968
+      },
+      "Idle": {
+        "frame_range": [
+          0.8000000715255737,
+          48.79999923706055
+        ],
+        "loop_error": 0.0,
+        "motion": 0.00453651167374949
+      },
+      "Walk": {
+        "frame_range": [
+          0.8000000715255737,
+          39.20000076293945
+        ],
+        "loop_error": 0.0,
+        "motion": 0.16700691310846252
+      }
+    }
+  },
+  "chaosbes": {
+    "triangles": 5990,
+    "bytes": 26494316,
+    "clips": [],
+    "embedded_images": 3
+  }
+}

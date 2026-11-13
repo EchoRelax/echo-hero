@@ -1,0 +1,75 @@
+import {createRequire} from 'node:module'
+import {join} from 'node:path'
+import {mkdirSync,readFileSync,readdirSync} from 'node:fs'
+import assert from 'node:assert/strict'
+const require=createRequire(join(process.env.TEMP,'echo-hero-qa','package.json'))
+const {chromium}=require('playwright')
+const browser=await chromium.launch({headless:true,channel:'msedge'})
+const context=await browser.newContext({viewport:{width:1280,height:900}})
+await context.addInitScript(()=>{if(!sessionStorage.getItem('dev-seeded')){
+ localStorage.setItem('echo-hunt-progress',JSON.stringify({version:7,progress:{level:1,xp:0,gold:7,cargo:0,baseUnlocked:true,milestonePaid:0,talents:{warrior:0,resilience:0,gatherer:0},upgrades:{damage:0,health:0,speed:0,pickup:0}},defeatedBosses:[],slots:[null,null]}));sessionStorage.setItem('dev-seeded','1')
+}})
+const page=await context.newPage(),errors=[]
+page.on('pageerror',e=>errors.push(e.message))
+await page.route('**/src/main.ts*',async route=>{
+ const response=await route.fetch(),body=await response.text()
+ await route.fulfill({response,body:body.replace('new Game(root)','window.__devGame = new Game(root)')})
+})
+mkdirSync('art/dev-tools',{recursive:true})
+try{
+ await page.goto('http://127.0.0.1:5176/')
+ await page.locator('.dev-toggle').waitFor()
+ await page.evaluate(()=>window.__devGame.renderer.setAnimationLoop(null))
+ const snapshot=()=>page.evaluate(()=>{const g=window.__devGame;return {visible:g.enemies.map(e=>e.model.root.visible),positions:g.enemies.map(e=>e.position.toArray()),player:g.player.position.toArray(),bosses:g.encounters.map(e=>({id:e.boss.id,hp:e.boss.health.current,position:e.boss.position.toArray()})),mode:g.mode}})
+ const before=await snapshot()
+ await page.keyboard.press('F2')
+ assert.equal(await page.locator('[data-summon],[data-attack],[data-home],[data-reset],[data-exit]').count(),0)
+ await page.locator('[data-gold] input').fill('5000');await page.locator('[data-gold] button').click()
+ assert.equal(await page.evaluate(()=>window.__devGame.progress.gold),5007)
+ await page.locator('[data-xp] input').fill('1000');await page.locator('[data-xp] button').click()
+ assert(await page.evaluate(()=>window.__devGame.progress.level>1&&window.__devGame.player.health.max>100))
+ await page.locator('[data-invincible]').check()
+ const hp=await page.evaluate(()=>window.__devGame.player.health.current)
+ await page.evaluate(()=>window.__devGame.hurtPlayer(100))
+ assert.equal(await page.evaluate(()=>window.__devGame.player.health.current),hp)
+ await page.locator('[data-invincible]').uncheck();await page.evaluate(()=>window.__devGame.hurtPlayer(5))
+ assert.equal(await page.evaluate(()=>window.__devGame.player.health.current),hp-5)
+ for(const [id,slot] of [['lightning','0'],['fire','1']]){
+  await page.locator('select[data-rune]').selectOption(id);await page.locator('select[data-slot]').selectOption({value:slot});await page.locator('[data-grant-rune]').click()
+ }
+ assert.deepEqual(await page.evaluate(()=>window.__devGame.runes.active),['lightning','fire'])
+ assert.equal(await page.evaluate(()=>window.__devGame.defeated.size),0)
+ assert.equal(await page.evaluate(()=>window.__devGame.echoUnlocked),false)
+ assert.deepEqual(await snapshot(),before,'Panel changed mobs, bosses, player position or game mode')
+ const saved=await page.evaluate(()=>JSON.parse(localStorage.getItem('echo-hunt-progress')))
+ assert.equal(saved.version,8);assert.equal(saved.progress.gold,await page.evaluate(()=>window.__devGame.progress.gold))
+ assert.deepEqual(saved.defeatedBosses,[]);assert.deepEqual(saved.grantedRunes,['lightning','fire'])
+ await page.locator('[data-gold] input').fill('-1');await page.locator('[data-gold] button').click()
+ assert.equal(await page.evaluate(()=>window.__devGame.progress.gold),saved.progress.gold)
+ await page.locator('[data-gold] input').fill('1000')
+ await page.evaluate(()=>window.__devGame.frame(performance.now()))
+ await page.screenshot({path:'art/dev-tools/panel.png'})
+ await page.setViewportSize({width:390,height:844});await page.screenshot({path:'art/dev-tools/mobile.png'})
+ const box=await page.locator('.dev-panel').boundingBox();assert(box.x>=0&&box.y>=0&&box.x+box.width<=390&&box.y+box.height<=844)
+ await page.reload();await page.locator('.dev-toggle').waitFor();await page.evaluate(()=>window.__devGame.renderer.setAnimationLoop(null))
+ assert.equal(await page.evaluate(()=>window.__devGame.progress.gold),saved.progress.gold)
+ assert.equal(await page.evaluate(()=>window.__devGame.progress.level),saved.progress.level)
+ assert.deepEqual(await page.evaluate(()=>window.__devGame.runes.active),['lightning','fire'])
+ assert.equal(await page.evaluate(()=>window.__devGame.defeated.size),0)
+ assert.equal(await page.evaluate(()=>window.__devGame.devInvincible),false)
+ assert(await page.evaluate(()=>window.__devGame.enemies.every(e=>e.model.root.visible)))
+ await page.evaluate(()=>window.__devGame.setMode('runes'))
+ assert.equal(await page.locator('.rune-card').nth(2).locator('button').first().isDisabled(),false)
+ await page.evaluate(()=>window.__devGame.setMode('active'))
+ // Native autoattack and enemy AI still run with the panel present.
+ const combat=await page.evaluate(()=>{
+  const g=window.__devGame,e=g.enemies[0];e.health.grow(1000);e.health.restore();g.player.position.copy(e.position).add({x:0,y:0,z:2.5});const start=e.position.clone()
+  for(let i=0;i<90;i++)g.update(1/60)
+  return {moved:e.position.distanceTo(start),hp:e.health.current}
+ })
+ assert(combat.moved>0&&combat.hp<1000,'Normal AI or autoattack stopped')
+ assert.deepEqual(errors,[])
+ const built=readdirSync('dist/assets').filter(n=>/\.(js|css)$/.test(n)).map(n=>readFileSync(`dist/assets/${n}`,'utf8')).join(' ')
+ assert(!built.includes('dev-panel')&&!built.includes('Дев-панель'),'Dev UI leaked into release')
+ console.log('PASS: native world unchanged; invincibility, gold, levels, persistent rune unlocks without boss kills; reload, validation, mobile, normal AI/autoattack, production exclusion')
+}finally{await browser.close()}

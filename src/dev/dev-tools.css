@@ -1,0 +1,23 @@
+.dev-toggle,.dev-panel{position:absolute;z-index:120;font-family:system-ui,sans-serif;color:#eef4ff}
+.dev-toggle{right:14px;bottom:14px;padding:9px 13px;border:1px solid #627495;border-radius:8px;background:#24334a;font-size:12px;cursor:pointer}
+.dev-panel{right:14px;bottom:62px;width:min(330px,calc(100% - 28px));max-height:calc(100% - 90px);overflow:auto;box-sizing:border-box;padding:14px;background:#182335f5;border:1px solid #627495;border-radius:12px;box-shadow:0 8px 28px #0006;font-size:13px;line-height:1.4;touch-action:pan-y;user-select:text}
+.dev-panel[hidden]{display:none}
+.dev-heading{display:flex;align-items:center;justify-content:space-between;font-size:15px}
+.dev-panel p,.dev-panel small{color:#b8c8de;font-size:11px}
+.dev-panel button,.dev-panel select{box-sizing:border-box;border:1px solid #617494;border-radius:6px;background:#2a3b54;color:#eef4ff;padding:8px;font:inherit;cursor:pointer;min-height:34px;box-shadow:none;transform:none}
+.dev-panel button:hover{background:#3a526e}
+.dev-panel button:focus-visible,.dev-panel select:focus-visible,.dev-toggle:focus-visible{outline:2px solid #7ce2df;outline-offset:2px}
+.dev-panel .dev-primary{width:100%;margin:10px 0 8px;background:#235b68}
+.dev-select,.dev-select select{display:block;width:100%}
+.dev-select select{margin-top:4px}
+.dev-row{display:flex;gap:8px;margin:8px 0 0}
+.dev-row button{flex:1}
+.dev-panel fieldset{margin:12px 0;padding:9px;border:1px solid #4a5b76;border-radius:7px;min-width:0}
+.dev-panel legend{padding:0 5px;color:#a6deda;font-size:12px}
+.dev-panel fieldset label{display:flex;align-items:center;gap:8px;margin:5px 0}
+.dev-panel input[type=checkbox]{width:16px;height:16px;accent-color:#60c9b9}
+.dev-panel fieldset button{width:100%;margin:3px 0}
+.dev-panel small{display:block;margin-top:6px}
+.dev-status{display:block;min-height:34px;padding:9px;background:#0f1928;border-radius:6px;color:#c2f2ce;font-size:12px;white-space:normal}
+.dev-panel input[type=number]{box-sizing:border-box;display:block;width:100%;margin-top:4px;min-height:36px;padding:8px;border:1px solid #617494;border-radius:6px;background:#2a3b54;color:#eef4ff;font:inherit}
+.dev-panel fieldset label.dev-select{display:block;margin:7px 0}

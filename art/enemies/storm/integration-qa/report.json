@@ -1,0 +1,54 @@
+{
+  "wisps": 13,
+  "clips": [
+    "Fly",
+    "Hover",
+    "Melee",
+    "StormCast",
+    "StormChannel",
+    "VortexCast"
+  ],
+  "vortices": 6,
+  "vortexSeconds": 10,
+  "vortexPaths": [
+    {
+      "min": 0,
+      "max": 5.799999999999514
+    },
+    {
+      "min": 0.6999998793106882,
+      "max": 5.799999000000006
+    },
+    {
+      "min": 1.1999997931032782,
+      "max": 5.79999999999912
+    },
+    {
+      "min": 0.499999913794096,
+      "max": 5.799999000000001
+    },
+    {
+      "min": 0.7999998620701337,
+      "max": 5.799999999999939
+    },
+    {
+      "min": 1.2999995517259915,
+      "max": 5.799999999999855
+    }
+  ],
+  "minOuterReach": 4.850909090908701,
+  "arenaSectors": 4,
+  "bolts": 18,
+  "castSeconds": 5,
+  "maxActive": 6,
+  "firstStrike": 1.1333333333333333,
+  "warningFuse": 1.1173242230836617,
+  "batchDamage": 285,
+  "singleDamage": 95,
+  "dodging": true,
+  "cleanup": true,
+  "naturalMoveset": true,
+  "victory": true,
+  "errors": [],
+  "failed": []
+}

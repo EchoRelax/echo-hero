@@ -1,0 +1,14 @@
+{
+  "source_triangles": 50000,
+  "triangles": 7988,
+  "bones": 18,
+  "clips": {
+    "Idle": 2.0,
+    "Walk": 1.6,
+    "Melee": 1.1,
+    "GroundSlam": 2.0,
+    "Charge": 1.6,
+    "WaveRelease": 0.6
+  },
+  "method": "UV-preserving collapse decimation; heat skin and rigid stone plates"
+}

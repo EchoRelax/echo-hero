@@ -1,0 +1,47 @@
+{
+  "model": "boss2.glb",
+  "clips": [
+    "Charge",
+    "GroundSlam",
+    "Idle",
+    "Melee",
+    "Walk",
+    "WaveRelease"
+  ],
+  "eruptionZones": 5,
+  "basicDamage": 26,
+  "eruptionDamage": 57,
+  "waveDamage": 46,
+  "launches": [
+    {
+      "frame": 19,
+      "angle": 0
+    },
+    {
+      "frame": 62,
+      "angle": 1.0471975511965976
+    },
+    {
+      "frame": 106,
+      "angle": 2.0943951023931953
+    },
+    {
+      "frame": 149,
+      "angle": 3.141592653589793
+    },
+    {
+      "frame": 192,
+      "angle": 4.1887902047863905
+    },
+    {
+      "frame": 235,
+      "angle": 5.235987755982989
+    }
+  ],
+  "dodgeChecks": true,
+  "deathAndReset": true,
+  "enrageTiming": true,
+  "victoryProgression": true,
+  "errors": [],
+  "failed": []
+}

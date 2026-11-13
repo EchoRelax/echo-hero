@@ -1,0 +1,194 @@
+{
+  "tests": "Rounding, milestone points, repeat spending, snapshots, v5 migration, persistence, malformed data passed",
+  "profiles": [
+    {
+      "preferred": "warrior",
+      "spent": 91136,
+      "checkpoints": [
+        {
+          "zone": "valley",
+          "level": 9,
+          "damage": 22,
+          "health": 214,
+          "capacity": 120,
+          "ranks": {
+            "damage": 19,
+            "health": 5,
+            "capacity": 5,
+            "speed": 0
+          },
+          "stageKills": 137,
+          "totalKills": 137,
+          "minutes": 9,
+          "trips": 28,
+          "bossSeconds": 24,
+          "bossSpecialHits": 10
+        },
+        {
+          "zone": "canyon",
+          "level": 20,
+          "damage": 106,
+          "health": 502,
+          "capacity": 800,
+          "ranks": {
+            "damage": 45,
+            "health": 25,
+            "capacity": 23,
+            "speed": 8
+          },
+          "stageKills": 253,
+          "totalKills": 390,
+          "minutes": 33,
+          "trips": 91,
+          "bossSeconds": 25,
+          "bossSpecialHits": 9
+        },
+        {
+          "zone": "ruins",
+          "level": 35,
+          "damage": 615,
+          "health": 1002,
+          "capacity": 2520,
+          "ranks": {
+            "damage": 86,
+            "health": 63,
+            "capacity": 45,
+            "speed": 20
+          },
+          "stageKills": 424,
+          "totalKills": 814,
+          "minutes": 75,
+          "trips": 198,
+          "bossSeconds": 23,
+          "bossSpecialHits": 10
+        }
+      ]
+    },
+    {
+      "preferred": "resilience",
+      "spent": 93436,
+      "checkpoints": [
+        {
+          "zone": "valley",
+          "level": 9,
+          "damage": 22,
+          "health": 225,
+          "capacity": 120,
+          "ranks": {
+            "damage": 19,
+            "health": 5,
+            "capacity": 5,
+            "speed": 0
+          },
+          "stageKills": 138,
+          "totalKills": 138,
+          "minutes": 9,
+          "trips": 28,
+          "bossSeconds": 24,
+          "bossSpecialHits": 11
+        },
+        {
+          "zone": "canyon",
+          "level": 20,
+          "damage": 101,
+          "health": 566,
+          "capacity": 800,
+          "ranks": {
+            "damage": 46,
+            "health": 22,
+            "capacity": 23,
+            "speed": 8
+          },
+          "stageKills": 252,
+          "totalKills": 390,
+          "minutes": 34,
+          "trips": 89,
+          "bossSeconds": 26,
+          "bossSpecialHits": 10
+        },
+        {
+          "zone": "ruins",
+          "level": 35,
+          "damage": 618,
+          "health": 1191,
+          "capacity": 2520,
+          "ranks": {
+            "damage": 90,
+            "health": 51,
+            "capacity": 45,
+            "speed": 20
+          },
+          "stageKills": 435,
+          "totalKills": 825,
+          "minutes": 75,
+          "trips": 190,
+          "bossSeconds": 23,
+          "bossSpecialHits": 11
+        }
+      ]
+    },
+    {
+      "preferred": "gatherer",
+      "spent": 94915,
+      "checkpoints": [
+        {
+          "zone": "valley",
+          "level": 9,
+          "damage": 22,
+          "health": 214,
+          "capacity": 130,
+          "ranks": {
+            "damage": 19,
+            "health": 5,
+            "capacity": 5,
+            "speed": 0
+          },
+          "stageKills": 138,
+          "totalKills": 138,
+          "minutes": 9,
+          "trips": 28,
+          "bossSeconds": 24,
+          "bossSpecialHits": 10
+        },
+        {
+          "zone": "canyon",
+          "level": 20,
+          "damage": 101,
+          "health": 502,
+          "capacity": 977,
+          "ranks": {
+            "damage": 46,
+            "health": 25,
+            "capacity": 22,
+            "speed": 8
+          },
+          "stageKills": 251,
+          "totalKills": 389,
+          "minutes": 35,
+          "trips": 91,
+          "bossSeconds": 26,
+          "bossSpecialHits": 9
+        },
+        {
+          "zone": "ruins",
+          "level": 35,
+          "damage": 618,
+          "health": 1012,
+          "capacity": 2902,
+          "ranks": {
+            "damage": 90,
+            "health": 64,
+            "capacity": 38,
+            "speed": 20
+          },
+          "stageKills": 425,
+          "totalKills": 814,
+          "minutes": 78,
+          "trips": 196,
+          "bossSeconds": 23,
+          "bossSpecialHits": 10
+        }
+      ]
+    }
+  ]
+}

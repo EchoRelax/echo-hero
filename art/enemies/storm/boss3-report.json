@@ -1,0 +1,14 @@
+{
+  "source_triangles": 50000,
+  "triangles": 7988,
+  "bones": 15,
+  "clips": {
+    "Hover": 2.0,
+    "Fly": 1.6,
+    "Melee": 1.2,
+    "VortexCast": 2.0,
+    "StormCast": 1.0,
+    "StormChannel": 1.0
+  },
+  "method": "UV-preserving automatic collapse decimation"
+}

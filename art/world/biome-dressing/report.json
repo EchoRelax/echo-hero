@@ -1,0 +1,140 @@
+{
+  "canyon": {
+    "counts": {
+      "ribcage": 3,
+      "horned-skull": 3,
+      "bone-scatter": 27,
+      "dead-tree": 13,
+      "dry-grass": 96,
+      "ash-agave": 54
+    },
+    "features": 196,
+    "meshes": 21,
+    "triangles": 14648,
+    "colliders": 49,
+    "majors": [
+      {
+        "kind": "ribcage",
+        "side": -22,
+        "depth": 34
+      },
+      {
+        "kind": "horned-skull",
+        "side": 23,
+        "depth": 43
+      },
+      {
+        "kind": "ribcage",
+        "side": -19,
+        "depth": 46
+      },
+      {
+        "kind": "horned-skull",
+        "side": 14,
+        "depth": 55
+      },
+      {
+        "kind": "ribcage",
+        "side": -25,
+        "depth": 54
+      },
+      {
+        "kind": "horned-skull",
+        "side": 1,
+        "depth": 24
+      }
+    ],
+    "route": [
+      {
+        "clear": 7,
+        "total": 7
+      },
+      {
+        "clear": 35,
+        "total": 35
+      },
+      {
+        "clear": 51,
+        "total": 51
+      },
+      {
+        "clear": 48,
+        "total": 48
+      },
+      {
+        "clear": 22,
+        "total": 25
+      }
+    ]
+  },
+  "ruins": {
+    "counts": {
+      "observatory": 2,
+      "broken-arch": 2,
+      "shattered-conduit": 2,
+      "dead-tree": 16,
+      "crystal-bed": 22,
+      "lightning-scar": 2,
+      "frost-reeds": 150
+    },
+    "features": 196,
+    "meshes": 26,
+    "triangles": 10060,
+    "colliders": 52,
+    "majors": [
+      {
+        "kind": "observatory",
+        "side": -22,
+        "depth": 34
+      },
+      {
+        "kind": "broken-arch",
+        "side": 23.000000000000004,
+        "depth": 43
+      },
+      {
+        "kind": "shattered-conduit",
+        "side": -19,
+        "depth": 46
+      },
+      {
+        "kind": "observatory",
+        "side": 14.000000000000004,
+        "depth": 55
+      },
+      {
+        "kind": "broken-arch",
+        "side": -25,
+        "depth": 54
+      },
+      {
+        "kind": "shattered-conduit",
+        "side": 25.000000000000004,
+        "depth": 25
+      }
+    ],
+    "route": [
+      {
+        "clear": 7,
+        "total": 7
+      },
+      {
+        "clear": 35,
+        "total": 35
+      },
+      {
+        "clear": 51,
+        "total": 51
+      },
+      {
+        "clear": 48,
+        "total": 48
+      },
+      {
+        "clear": 22,
+        "total": 25
+      }
+    ]
+  },
+  "errors": []
+}

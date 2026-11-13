@@ -1,0 +1,7 @@
+{
+  "source_triangles": 50000,
+  "triangles": 3990,
+  "bones": 0,
+  "clips": {},
+  "method": "UV-preserving automatic collapse decimation"
+}

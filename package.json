@@ -1,0 +1,23 @@
+{
+  "name": "echo-hunt",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc --noEmit && vite build",
+    "dev:crazygames": "vite --mode crazygames",
+    "build:crazygames": "tsc --noEmit && vite build --mode crazygames --outDir dist-crazygames",
+    "preview:crazygames": "vite preview --outDir dist-crazygames",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "gsap": "^3.15.1",
+    "three": "^0.187.0"
+  },
+  "devDependencies": {
+    "@types/three": "^0.187.0",
+    "typescript": "^7.0.2",
+    "vite": "^8.3.5"
+  }
+}

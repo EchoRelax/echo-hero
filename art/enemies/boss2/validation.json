@@ -1,0 +1,42 @@
+{
+  "triangles": 7988,
+  "bones": 18,
+  "embedded_images": 3,
+  "clips": {
+    "Melee": {
+      "duration": 1.1000000288089116,
+      "motion": 0.8725527318619878,
+      "start_end_error": 0.0
+    },
+    "GroundSlam": {
+      "duration": 1.999999965230624,
+      "motion": 0.8618232139853443,
+      "start_end_error": 0.0
+    },
+    "Charge": {
+      "duration": 1.6000000288089116,
+      "motion": 0.14932607390543154,
+      "start_end_error": 0.5832804690464243
+    },
+    "WaveRelease": {
+      "duration": 0.5999999890724818,
+      "motion": 0.17161513862944522,
+      "start_end_error": 0.0
+    },
+    "Idle": {
+      "duration": 1.999999965230624,
+      "motion": 0.004335036277596599,
+      "start_end_error": 0.0
+    },
+    "Walk": {
+      "duration": 1.6000000288089116,
+      "motion": 0.1822590547440988,
+      "start_end_error": 0.0
+    }
+  },
+  "slam_hand_floor": {
+    "L": 0.0037211179733276367,
+    "R": 0.003746122121810913
+  },
+  "charge_release_error": 0.0
+}

@@ -1,0 +1,22 @@
+{
+  "golem": {
+    "source_triangles": 49992,
+    "triangles": 5990,
+    "vertices": 2973,
+    "bones": 17,
+    "animations": {
+      "Idle": 2,
+      "Walk": 1.6,
+      "Attack": 1.5
+    },
+    "method": "UV-preserving collapse decimation, source textures retained"
+  },
+  "chaosbes": {
+    "source_triangles": 50000,
+    "triangles": 5990,
+    "vertices": 2997,
+    "bones": 0,
+    "animations": {},
+    "method": "UV-preserving collapse decimation, source textures retained"
+  }
+}
